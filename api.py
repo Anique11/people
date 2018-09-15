@@ -16,10 +16,12 @@ class Api():
             self.team = pickle.load(stored)
         return self.team
     
-    def save(self):
+    def save(self, team=None):
+        if team is None:
+            team = self.team
         with open('team.pickle', 'wb') as storage:
             # Pickle the 'team' dictionary using the highest protocol available.
-            pickle.dump(self.team, storage, pickle.HIGHEST_PROTOCOL)
+            pickle.dump(team, storage, pickle.HIGHEST_PROTOCOL)
     
     def __del__(self):
         self.save()
