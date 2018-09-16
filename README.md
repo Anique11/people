@@ -32,8 +32,6 @@ On closing the session (by using `exit()`) the team object is stored in a file c
 However, don't blindly trust on this happening. Especially after entering a lot of data, use `api.save()` to store the current data.
 
 # NOTES
-- If you inadvertently called `api.initialise()` while you have data in an existing 'team.pickle' file, call `api.load()` again to prevent losing that data.
-You _will_ probably have lost any changes you made after your last save though. It may be possible to save it by calling `api.save(team)` - unless you stored the return value of `api.initialise()` in `team` - then your unsaved data is really lost. Anyway, no guarantees. Backup your existing picke file first.
 - This utility is still under (heavy) development. Some changes to the code may prevent an existing pickle file from loading.
 If you do want to use the code as-is to work with any data that is important to you, store the current code state in a separate branch that you don't change anymore, and use that to handle that particular dataset.
 (Though there is nothing stopping you from trying to work with updated code and the same data - it may work. Just backup the data first.)

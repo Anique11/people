@@ -6,7 +6,14 @@ class Api():
     def __init__(self):
         self.team = None
     
-    def initialise(self):
+    def initialise(self, force=False):
+        if self.team is not None:
+            msg = "There is already a team present. "
+            if not force:
+                print(msg + "Made no changes.")
+                return self.team
+            else:
+                print(msg + "Using the Force - replacing team.")
         from team import Team
         self.team = Team()
         return self.team
