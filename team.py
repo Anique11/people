@@ -1,7 +1,8 @@
 #! /usr/bin/env python3
 
 class Team:
-    def __init__(self):
+    def __init__(self, name='team'):
+        self.name = name
         self.people = dict()
         self.meetings = dict()
     
